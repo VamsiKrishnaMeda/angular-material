@@ -1,11 +1,14 @@
 # AngularMaterial
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.6.
+
 **Warning:** This project is highly customized. It is meant as a starting point to create your own project. You would need to go through the code and make necessary changes to make it work for your solution.
 
 ## Installation
 Clone the GitHub respository https://github.com/VamsiKrishnaMeda/angular-material.git
+
 Navigate to the project folder `cd angular-material`.
+
 Run `npm install` to install all the dependencies.
 
 ## Development server
@@ -14,7 +17,9 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `ng generate component component-name` to generate a new component.
+
+You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
