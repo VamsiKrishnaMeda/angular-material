@@ -1,0 +1,19 @@
+[
+    {
+        "name": "Time",
+        "type": "date",
+        "format": "%Y-%m-%d %H:%M:%S.%L"
+    },
+    {
+        "name": "Textblob",
+        "type": "number"
+    },
+    {
+        "name": "Vader",
+        "type": "number"
+    },
+    {
+        "name": "Transformer",
+        "type": "number"
+    }
+]
