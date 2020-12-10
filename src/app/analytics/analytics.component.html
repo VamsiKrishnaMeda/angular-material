@@ -1,0 +1,71 @@
+<div style="width: 90%; margin: auto; padding: 10px;">
+    <mat-toolbar>
+        <span>Data Analytics</span>
+    </mat-toolbar>
+    <div>
+        <form class="analytics-form" [formGroup]="analyticsForm" (ngSubmit)="runAnalytics()">
+            <br>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Select a Collection</mat-label>
+                <mat-select id="analyticsCollection" formControlName="analyticsCollection" required>
+                    <mat-option *ngFor="let collection of collectionList" [value]="collection">{{ collection }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Select an Analysis</mat-label>
+                <mat-select id="analysis" formControlName="analysis" required>
+                    <mat-option *ngFor="let process of processList" [value]="process">{{ process }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <br>
+            <br>
+            <p style="margin: auto; text-align: center;">
+                <button mat-raised-button color="accent" style="font-size: 20px;" type="submit">Run</button>
+            </p>
+        </form>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div *ngIf="chart; else elseBlock">
+        <google-chart [title]="chart.title" [type]="chart.type" [data]="chart.data" [columns]="chart.columnNames" [options]="chart.options">
+        </google-chart>
+    </div>
+    <ng-template #elseBlock>
+        <mat-progress-bar *ngIf="loading" mode="query"></mat-progress-bar>
+    </ng-template>
+    <div>
+        <google-chart [title]="bidenData.title" [type]="bidenData.type" [data]="bidenData.data" [columns]="bidenData.columnNames" [options]="bidenData.options">
+        </google-chart>
+    </div>
+    <br>
+    <br>
+    <div>
+        <google-chart [title]="bloombergData.title" [type]="bloombergData.type" [data]="bloombergData.data" [columns]="bloombergData.columnNames" [options]="bloombergData.options">
+        </google-chart>
+    </div>
+    <br>
+    <br>
+    <div>
+        <google-chart [title]="buttigiegData.title" [type]="buttigiegData.type" [data]="buttigiegData.data" [columns]="buttigiegData.columnNames" [options]="buttigiegData.options">
+        </google-chart>
+    </div>
+    <br>
+    <br>
+    <div>
+        <google-chart [title]="klobucharData.title" [type]="klobucharData.type" [data]="klobucharData.data" [columns]="klobucharData.columnNames" [options]="klobucharData.options">
+        </google-chart>
+    </div>
+    <br>
+    <br>
+    <div>
+        <google-chart [title]="sandersData.title" [type]="sandersData.type" [data]="sandersData.data" [columns]="sandersData.columnNames" [options]="sandersData.options">
+        </google-chart>
+    </div>
+    <br>
+    <br>
+    <div>
+        <google-chart [title]="warrenData.title" [type]="warrenData.type" [data]="warrenData.data" [columns]="warrenData.columnNames" [options]="warrenData.options">
+        </google-chart>
+    </div>
+</div>

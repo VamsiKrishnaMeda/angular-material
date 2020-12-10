@@ -1,0 +1,51 @@
+<div style="width: 90%; margin: auto; padding: 10px;">
+    <mat-toolbar>
+        <span>Mongo Operations</span>
+    </mat-toolbar>
+    <mat-tab-group color="accent">
+        <mat-tab label="Import">
+            <form class="mongo-form" [formGroup]="importForm" (ngSubmit)="runImport()">
+                <br>
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Import Directory</mat-label>
+                    <input matInput id="importDirectory" formControlName="importDirectory" placeholder="/full/path/to/directory/" required>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Database Name</mat-label>
+                    <input matInput id="importDatabase" formControlName="importDatabase" placeholder="Database Name" required>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Collection Name</mat-label>
+                    <input matInput id="importCollection" formControlName="importCollection" placeholder="Collection Name" required>
+                </mat-form-field>
+                <br>
+                <br>
+                <p style="margin: auto; text-align: center;">
+                    <button mat-raised-button color="accent" style="font-size: 20px;" type="submit">Import</button>
+                </p>
+            </form>
+        </mat-tab>
+        <mat-tab label="Keyword Adder">
+            <form class="mongo-form" [formGroup]="adderForm" (ngSubmit)="runAdder()">
+                <br>
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Database Name</mat-label>
+                    <input matInput id="adderDatabase" formControlName="adderDatabase" placeholder="Database Name" required>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Collection Name</mat-label>
+                    <input matInput id="adderCollection" formControlName="adderCollection" placeholder="Collection Name" required>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Keywords</mat-label>
+                    <input matInput id="adderKeywords" formControlName="adderKeywords" placeholder="Ex: One OR Two OR Three" required>
+                </mat-form-field>
+                <br>
+                <br>
+                <p style="margin: auto; text-align: center;">
+                    <button mat-raised-button style="font-size: 20px;" color="accent" type="submit">Run</button>
+                </p>
+            </form>
+        </mat-tab>
+    </mat-tab-group>
+</div>

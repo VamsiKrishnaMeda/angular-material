@@ -1,0 +1,30 @@
+.collection-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+.full-width {
+    width: 100%;
+}
+.half-width {
+    width: 46%;
+    flex: auto;
+}
+.third-width {
+    width: 32%;
+    flex: auto
+}
+.center {
+    flex: auto;
+}
+.example-section {
+    font-size: large;
+    align-content: center;
+    align-items: center;
+}  
+.example-margin {
+    margin: 10px;
+    padding-left: 50px;
+    padding-right: 10px;
+    font-size: medium;
+}

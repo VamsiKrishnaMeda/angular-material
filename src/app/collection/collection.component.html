@@ -1,0 +1,100 @@
+<div style="width: 90%; margin: auto; padding: 10px;">
+    <mat-toolbar>
+        <span>Twitter Data Collection</span>
+    </mat-toolbar>
+    <mat-tab-group color="accent">
+        <mat-tab label="New Collection">
+            <form class="collection-form" [formGroup]="collectionForm" (ngSubmit)="newCollection()">
+                <br>
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Keywords</mat-label>
+                    <input matInput id="keywords" formControlName="keywords" placeholder="Ex: One OR Two OR Three">
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Start Date</mat-label>
+                    <input matInput type="date" id="startDate" formControlName="startDate" placeholder="mm/dd/yyyy">
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Start Time</mat-label>
+                    <input matInput id="startTime" formControlName="startTime" placeholder="15:10" required>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Duration (minutes)</mat-label>
+                    <input matInput id="duration" formControlName="duration" placeholder="10" required>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Directory</mat-label>
+                    <input matInput id="directory" formControlName="directory" placeholder="/full/path/to/directory" required>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Data File Name</mat-label>
+                    <input matInput id="filename" formControlName="filename" placeholder="Data.txt" required>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Summary File Name</mat-label>
+                    <input matInput id="summaryFilename" formControlName="summaryFilename" placeholder="Summary.txt" required>
+                </mat-form-field>
+                <br>
+                <br>
+                <p style="margin: auto; text-align: center;">
+                    <button mat-raised-button color="accent" style="font-size: 20px;" type="submit">Start</button>
+                </p>
+            </form>
+        </mat-tab>
+        <mat-tab label="New Pipeline">
+            <form class="collection-form" [formGroup]="pipelineForm" (ngSubmit)="newPipeline()">
+                <br>
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Keywords</mat-label>
+                    <input matInput id="pipelineKeywords" formControlName="pipelineKeywords" placeholder="Ex: One OR Two OR Three">
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="third-width">
+                    <mat-label>Start Date</mat-label>
+                    <input matInput type="date" id="pipelineStartDate" formControlName="pipelineStartDate" placeholder="mm/dd/yyyy">
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="third-width" style="padding-left: 10px; padding-right: 10px;">
+                    <mat-label>Start Time</mat-label>
+                    <input matInput id="pipelineStartTime" formControlName="pipelineStartTime" placeholder="15:10" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="third-width">
+                    <mat-label>Duration (minutes)</mat-label>
+                    <input matInput id="pipelineDuration" formControlName="pipelineDuration" placeholder="10" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Directory</mat-label>
+                    <input matInput id="pipelineDirectory" formControlName="pipelineDirectory" placeholder="/full/path/to/directory" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="half-width" style="padding-right: 20px;">
+                    <mat-label>Data File Name</mat-label>
+                    <input matInput id="pipelineFilename" formControlName="pipelineFilename" placeholder="Data.txt" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="half-width" style="padding-left: 20px;">
+                    <mat-label>Summary File Name</mat-label>
+                    <input matInput id="pipelineSummaryFilename" formControlName="pipelineSummaryFilename" placeholder="Summary.txt" required>
+                </mat-form-field>
+                <br>
+                <br>
+                <mat-form-field appearance="fill" class="half-width" style="padding-right: 20px;">
+                    <mat-label>Database Name</mat-label>
+                    <input matInput id="pipelineDatabase" formControlName="pipelineDatabase" placeholder="Database" required>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="half-width" style="padding-left: 20px;">
+                    <mat-label>Database Name</mat-label>
+                    <input matInput id="pipelineCollection" formControlName="pipelineCollection" placeholder="Collection" required>
+                </mat-form-field>
+                <br>
+                <br>
+                <section>
+                    <label class="example-section">Select Analysis:</label>
+                    <mat-checkbox class="example-margin" id="pipelineLocation" formControlName="pipelineLocation">Language</mat-checkbox>
+                    <mat-checkbox class="example-margin" id="pipelineLanguage" formControlName="pipelineLanguage">Location</mat-checkbox>
+                  </section>
+                <br>
+                <br>
+                <p style="margin: auto; text-align: center;">
+                    <button mat-raised-button color="accent" style="font-size: 20px;" type="submit">Start</button>
+                </p>
+            </form>
+        </mat-tab>
+    </mat-tab-group>
+</div>

@@ -1,0 +1,26 @@
+.companyName {
+    font-size: 110%;
+}
+
+div {
+    overflow: inherit;
+}
+
+a {
+    text-decoration: none;
+    font-size: 100%;
+    white-space: normal;
+}
+
+button {
+    font-size: 100%;
+    min-width: min-content;
+}
+
+.example-icon {
+    padding: 0 14px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
