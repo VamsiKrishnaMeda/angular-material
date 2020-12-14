@@ -44,3 +44,10 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+src/app/analytics/analytics.component.ts
+src/assets/biden-data.json
+src/assets/bloomberg-data.json
+src/assets/buttigieg-data.json
+src/assets/klobuchar-data.json
+src/assets/sanders-data.json
+src/assets/warren-data.json

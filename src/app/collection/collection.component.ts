@@ -60,8 +60,20 @@ export class CollectionComponent implements OnInit {
 
   newPipeline() {
     this.pipelineData = {
-      keywords: this.pipelineForm.get('pipelineKeywords').value
+      keywords: this.pipelineForm.get('pipelineKeywords').value,
+      startDate: this.pipelineForm.get('pipelineStartDate').value,
+      startTime: this.pipelineForm.get('pipelineStartTime').value,
+      duration: this.pipelineForm.get('pipelineDuration').value,
+      directory: this.pipelineForm.get('pipelineDirectory').value,
+      filename: this.pipelineForm.get('pipelineFilename').value,
+      summaryFilename: this.pipelineForm.get('pipelineSummaryFilename').value,
+      database: this.pipelineForm('pipelineDatabase').value,
+      collection: this.pipelineForm.get('pipelineCollection').value,
+      location: this.pipelineForm.get('pipelineLocation').value,
+      language: this.pipelineForm.get('pipelineLanguage').value
     }
+    this.apiService.startPipeline(this.pipelineData);
+    this.pipelineForm.reset();
   }
 
 }

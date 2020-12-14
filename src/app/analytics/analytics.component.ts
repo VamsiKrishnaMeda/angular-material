@@ -15,6 +15,7 @@ export class AnalyticsComponent implements OnInit {
   analyticsData;
   loading = false;
   chart = null;
+  politicalData = false;
 
   // Practice
   practiceLanguage = {
@@ -336,48 +337,60 @@ export class AnalyticsComponent implements OnInit {
   runAnalytics() {
     this.loading = true;
     this.chart = null;
+    this.politicalData = false;
     this.analyticsData = {
       collection: this.analyticsForm.get('analyticsCollection').value,
       analysis: this.analyticsForm.get('analysis').value
     };
-    this.apiClient.startCollection(this.analyticsData)
-    let delayTime = 3000;
-    if (this.analyticsData.collection == 'Mar_01') {
-      delayTime = 8000;
-    } else if (this.analyticsData.collection == 'test') {
-      delayTime = 25000;
-    }
-    setTimeout(() => {
-      switch (this.analyticsData.collection) {
-        case 'practice':
-          switch (this.analyticsData.analysis) {
-            case 'Language':
-              this.chart = this.practiceLanguage;
-              break;
-            case 'Location':
-              this.chart = this.practiceLocation;
-              break;
-            case "Keyword":
-              this.chart = this.practiceKeyword;
-              break;
-          }
-          break;
-        case 'Mar_01':
-          if (this.analyticsData.analysis == 'Location') {
-            this.chart = this.marLocation;
-          } else {
-            this.chart = this.marLanguage;
-          }
-          break;
-        case 'test':
-          if (this.analyticsData.analysis == 'Location') {
-            this.chart = this.testLocation;
-          } else {
-            this.chart = this.testLanguage;
-          }
-          break;
+    this.apiClient.runAnalysis(this.analyticsData).subscribe(
+      (response) => {
+        this.chart = response;
+      },
+      (error) => {
+        console.log('Error: ' + error);
       }
-    }, delayTime);
+    );
+    // let delayTime = 3000;
+    // if (this.analyticsData.collection == 'Mar_01') {
+    //   delayTime = 8000;
+    // } else if (this.analyticsData.collection == 'test') {
+    //   delayTime = 25000;
+    // }
+    // setTimeout(() => {
+    //   switch (this.analyticsData.collection) {
+    //     case 'practice':
+    //       switch (this.analyticsData.analysis) {
+    //         case 'Language':
+    //           this.chart = this.practiceLanguage;
+    //           break;
+    //         case 'Location':
+    //           this.chart = this.practiceLocation;
+    //           break;
+    //         case "Keyword":
+    //           this.chart = this.practiceKeyword;
+    //           break;
+    //       }
+    //       break;
+    //     case 'Mar_01':
+    //       if (this.analyticsData.analysis == 'Location') {
+    //         this.chart = this.marLocation;
+    //       } else {
+    //         this.chart = this.marLanguage;
+    //       }
+    //       break;
+    //     case 'test':
+    //       if (this.analyticsData.analysis == 'Location') {
+    //         this.chart = this.testLocation;
+    //       } else {
+    //         this.chart = this.testLanguage;
+    //       }
+    //       break;
+    //     case 'Political Data':
+    //       this.chart = this.bidenData;
+    //       this.politicalData = true;
+    //       break;
+    //   }
+    // }, delayTime);
   }
 
 }

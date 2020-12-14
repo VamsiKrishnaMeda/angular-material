@@ -18,8 +18,23 @@ export class ApiServiceService {
   ngOnInit() { }
 
   startCollection(collectionData) {
-    console.log('Calling practice POST method')
-    this.http.post(this.baseUrl + 'practice', collectionData, this.httpOptions)
+    this.http.post(this.baseUrl + 'collection', JSON.stringify(collectionData), this.httpOptions).subscribe();
+  }
+
+  startPipeline(pipelineData) {
+    this.http.post(this.baseUrl + 'practice', JSON.stringify(pipelineData), this.httpOptions).subscribe();
+  }
+
+  mongoImport(importData) {
+    this.http.post(this.baseUrl + 'mongo', JSON.stringify(importData), this.httpOptions).subscribe();
+  }
+
+  keywordAdder(adderData) {
+    this.http.post(this.baseUrl + 'mongo', JSON.stringify(adderData), this.httpOptions).subscribe();
+  }
+
+  runAnalysis(analyticsData) {
+    return this.http.post(this.baseUrl + 'process', JSON.stringify(analyticsData), this.httpOptions);
   }
 
 }

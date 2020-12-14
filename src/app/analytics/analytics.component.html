@@ -34,38 +34,36 @@
     <ng-template #elseBlock>
         <mat-progress-bar *ngIf="loading" mode="query"></mat-progress-bar>
     </ng-template>
-    <div>
-        <google-chart [title]="bidenData.title" [type]="bidenData.type" [data]="bidenData.data" [columns]="bidenData.columnNames" [options]="bidenData.options">
-        </google-chart>
-    </div>
-    <br>
-    <br>
-    <div>
-        <google-chart [title]="bloombergData.title" [type]="bloombergData.type" [data]="bloombergData.data" [columns]="bloombergData.columnNames" [options]="bloombergData.options">
-        </google-chart>
-    </div>
-    <br>
-    <br>
-    <div>
-        <google-chart [title]="buttigiegData.title" [type]="buttigiegData.type" [data]="buttigiegData.data" [columns]="buttigiegData.columnNames" [options]="buttigiegData.options">
-        </google-chart>
-    </div>
-    <br>
-    <br>
-    <div>
-        <google-chart [title]="klobucharData.title" [type]="klobucharData.type" [data]="klobucharData.data" [columns]="klobucharData.columnNames" [options]="klobucharData.options">
-        </google-chart>
-    </div>
-    <br>
-    <br>
-    <div>
-        <google-chart [title]="sandersData.title" [type]="sandersData.type" [data]="sandersData.data" [columns]="sandersData.columnNames" [options]="sandersData.options">
-        </google-chart>
-    </div>
-    <br>
-    <br>
-    <div>
-        <google-chart [title]="warrenData.title" [type]="warrenData.type" [data]="warrenData.data" [columns]="warrenData.columnNames" [options]="warrenData.options">
-        </google-chart>
+    <div *ngIf="politicalData">
+        <br>
+        <br>
+        <div>
+            <google-chart [title]="bloombergData.title" [type]="bloombergData.type" [data]="bloombergData.data" [columns]="bloombergData.columnNames" [options]="bloombergData.options">
+            </google-chart>
+        </div>
+        <br>
+        <br>
+        <div>
+            <google-chart [title]="buttigiegData.title" [type]="buttigiegData.type" [data]="buttigiegData.data" [columns]="buttigiegData.columnNames" [options]="buttigiegData.options">
+            </google-chart>
+        </div>
+        <br>
+        <br>
+        <div>
+            <google-chart [title]="klobucharData.title" [type]="klobucharData.type" [data]="klobucharData.data" [columns]="klobucharData.columnNames" [options]="klobucharData.options">
+            </google-chart>
+        </div>
+        <br>
+        <br>
+        <div>
+            <google-chart [title]="sandersData.title" [type]="sandersData.type" [data]="sandersData.data" [columns]="sandersData.columnNames" [options]="sandersData.options">
+            </google-chart>
+        </div>
+        <br>
+        <br>
+        <div>
+            <google-chart [title]="warrenData.title" [type]="warrenData.type" [data]="warrenData.data" [columns]="warrenData.columnNames" [options]="warrenData.options">
+            </google-chart>
+        </div>
     </div>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { ApiServiceService } from '../api-service/api-service.service';
 
 @Component({
   selector: 'app-mongo',
@@ -12,10 +13,8 @@ export class MongoComponent implements OnInit {
   adderForm;
   importData;
   adderData;
-  importFlag = false;
-  adderFlag = false;
 
-  constructor(private formBuilder: FormBuilder) { 
+  constructor(private formBuilder: FormBuilder, private apiService: ApiServiceService) { 
     this.importForm = this.formBuilder.group({
       importDirectory: '',
       importDatabase: '',
@@ -33,20 +32,22 @@ export class MongoComponent implements OnInit {
 
   runImport() {
     this.importData = {
+      process: 'import',
       directory: this.importForm.get('importDirectory').value,
       database: this.importForm.get('importDatabase').value,
       collection: this.importForm.get('importCollection').value
     };
-    this.importFlag = true;
+    this.apiService.mongoImport(this.importData);
   }
 
   runAdder() {
-    this.adderFlag = true;
     this.adderData = {
+      process: 'adder',
       database: this.adderForm.get('adderDatabase').value,
       collection: this.adderForm.get('adderCollection').value,
       keywords: this.adderForm.get('adderKeywords').value
     };
+    this.apiService.keywordAdder(this.adderData);
   }
 
 }
