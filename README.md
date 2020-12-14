@@ -1,5 +1,7 @@
 # AngularMaterial
 
+You you need to install Node.js (https://nodejs.org) to run this project.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.6.
 
 **Warning:** This project is highly customized. It is meant as a starting point to create your own project. You would need to go through the code and make necessary changes to make it work for your solution.
